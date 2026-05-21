@@ -1,0 +1,18 @@
+services:
+
+  chat-api:
+    build: ./backend
+    container_name: chat-api-container
+    ports:
+      - "3000:3000"
+
+  chat-ui:
+    build: ./frontend
+    container_name: chat-ui-container
+    ports:
+      - "5173:5173"
+
+  cache:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
