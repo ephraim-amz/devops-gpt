@@ -26,7 +26,8 @@ jobs:
       - name: Run tests
         run: |
           npm test --prefix backend
-          npm test --prefix  --if-present frontend
+          npm test
+          cd frontend && npm run test --if-present
 
       - name: Deploy to production
         if: startsWith(github.ref, 'refs/tags/v')
