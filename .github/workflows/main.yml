@@ -18,10 +18,18 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies and run tests
-        run: |
-          npm install
-          npm test
+      - name: Backend dependencies installation
+        working-directory: ./backend
+        run: npm install
+
+      - name: Frontend dependencies installation
+        working-directory: ./frontend
+        run: npm install
+
+
+      - name: Installer les dépendances frontend
+        working-directory: ./frontend
+        run: npm install
         
       - name: Deploy to production
         if: startsWith(github.ref, 'refs/tags/v')
