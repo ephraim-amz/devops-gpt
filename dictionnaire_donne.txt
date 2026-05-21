@@ -1,0 +1,5 @@
+Message :
+- idMessage : int
+- type : string
+- dateEmission : datetime
+- contenu : string
